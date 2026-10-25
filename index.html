@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vertex Sports — O uniforme dos campeões</title>
+<meta name="description" content="Catálogo de modelos de uniformes Vertex Sports. Escolha seu modelo e monte no simulador.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b0b0a; --ink-2:#f1f0ea; --line:#e2e1da; --paper:#f2f1ea; --mute:#77766e;
+  --bg:#ffffff; --text:#0b0b0a;
+  --lime:#c9f31d; --lime-d:#a6cc00;
+  --display:"Big Shoulders Display",Impact,sans-serif; --body:"Inter Tight",system-ui,sans-serif;
+  --ease:cubic-bezier(.2,.7,.1,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.wrap{width:min(1320px,100% - 32px);margin-inline:auto}
+
+/* grain */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(255,255,255,.85);backdrop-filter:blur(14px);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.nav img{height:38px;width:auto}
+.nav ul{display:flex;gap:34px;list-style:none;font-size:14px;letter-spacing:.04em;text-transform:uppercase}
+.nav ul a{position:relative;padding:4px 0;color:#44433d}
+.nav ul a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:100%;background:var(--lime);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
+.nav ul a:hover{color:var(--text)} .nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
+
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;font-weight:600;font-size:14px;letter-spacing:.05em;text-transform:uppercase;border-radius:2px;position:relative;overflow:hidden;isolation:isolate;transition:color .35s}
+.btn-lime{background:var(--lime);color:var(--ink)}
+.btn-lime:hover{color:var(--lime)}
+.btn-lime::before{content:"";position:absolute;inset:0;background:var(--ink);transform:translateY(101%);transition:transform .45s var(--ease);z-index:-1}
+.btn-lime:hover::before{transform:none}
+.btn-ghost{border:1px solid #cfcec6}
+.btn-ghost:hover{border-color:var(--text)}
+.btn svg{width:16px;height:16px;transition:transform .35s var(--ease)}
+.btn:hover svg{transform:translate(3px,-3px)}
+
+/* hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:120px 0 0;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-1;
+  background:radial-gradient(60% 50% at 78% 30%,rgba(201,243,29,.35),transparent 70%),
+             repeating-linear-gradient(115deg,transparent 0 70px,rgba(0,0,0,.035) 70px 71px)}
+.hero-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
+.eyebrow{display:inline-flex;gap:10px;align-items:center;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--text);margin-bottom:22px}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--lime)}
+h1{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(56px,6.6vw,124px);line-height:.88;letter-spacing:-.01em}
+h1 .line{display:block;overflow:hidden}
+h1 .line span{display:block;transform:translateY(105%);animation:rise 1.1s var(--ease) forwards}
+h1 .line:nth-child(2) span{animation-delay:.1s} h1 .line:nth-child(3) span{animation-delay:.2s}
+h1 em{font-style:normal;color:transparent;-webkit-text-stroke:2px var(--text)}
+@keyframes rise{to{transform:none}}
+.hero p.lead{max-width:430px;color:#55544d;font-size:17px;line-height:1.55;margin:28px 0 34px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.fade-in{opacity:0;transform:translateY(18px);animation:fin .9s var(--ease) .55s forwards}
+@keyframes fin{to{opacity:1;transform:none}}
+
+.hero-stack{position:relative;height:min(540px,58vh)}
+.hero-stack figure{position:absolute;width:62%;aspect-ratio:10/9;border-radius:4px;overflow:hidden;background:var(--ink-2);box-shadow:0 30px 60px rgba(0,0,0,.18);opacity:0;animation:card 1.2s var(--ease) forwards}
+.hero-stack figure img{width:100%;height:100%;object-fit:cover;object-position:top}
+.hero-stack figure:nth-child(1){left:0;top:12%;--r:-8deg;animation-delay:.35s}
+.hero-stack figure:nth-child(2){right:0;top:0;--r:6deg;animation-delay:.5s;z-index:2}
+.hero-stack figure:nth-child(3){left:20%;bottom:0;--r:-2deg;animation-delay:.65s;z-index:3}
+@keyframes card{from{opacity:0;transform:translateY(80px) rotate(0)}to{opacity:1;transform:rotate(var(--r))}}
+
+.marquee{margin-top:56px;border-block:1px solid var(--line);background:var(--lime);color:var(--ink);overflow:hidden;transform:rotate(-1.2deg) scale(1.03)}
+.marquee-track{display:flex;width:max-content;animation:mq 28s linear infinite}
+.marquee span{font-family:var(--display);font-weight:900;font-size:30px;text-transform:uppercase;padding:12px 26px;white-space:nowrap;display:flex;align-items:center;gap:26px}
+.marquee span::after{content:"✦";font-size:18px}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding:120px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:46px}
+h2{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(46px,7vw,96px);line-height:.88}
+h2 small{display:block;font-family:var(--body);font-weight:500;font-size:13px;letter-spacing:.22em;color:var(--mute);margin-bottom:14px}
+
+/* filters */
+.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.chip{padding:10px 16px;border:1px solid var(--line);border-radius:40px;font-size:13px;color:#55544d;transition:all .3s var(--ease)}
+.chip b{font-weight:500;color:var(--mute);margin-left:6px;font-size:11px}
+.chip:hover{border-color:#9a998f;color:var(--text)}
+.chip.on{background:var(--text);color:#fff;border-color:var(--text)} .chip.on b{color:#a9a89f}
+.search{position:relative;flex:1;min-width:220px;max-width:320px;margin-left:auto}
+.search input{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line);padding:12px 4px 12px 30px;color:var(--text);font:inherit;font-size:15px;outline:none;transition:border-color .3s}
+.search input:focus{border-color:var(--text)}
+.search svg{position:absolute;left:2px;top:50%;translate:0 -50%;width:18px;color:var(--mute)}
+.toolbar{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:34px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:22px}
+.card{position:relative;cursor:zoom-in;opacity:0;transform:translateY(30px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.card.in{opacity:1;transform:none}
+.card .ph{aspect-ratio:10/9;overflow:hidden;background:var(--ink-2);border-radius:3px;position:relative}
+.card .ph img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .9s var(--ease),filter .5s;filter:saturate(.92)}
+.card:hover .ph img{transform:scale(1.07);filter:saturate(1.1)}
+.card .ph::after{content:"";position:absolute;inset:0;border:2px solid var(--lime);opacity:0;transition:opacity .35s;border-radius:3px}
+.card:hover .ph::after{opacity:1}
+.card .tag{position:absolute;top:10px;left:10px;background:rgba(11,11,10,.75);backdrop-filter:blur(6px);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:5px 8px;border-radius:2px}
+.card .meta{display:flex;justify-content:space-between;gap:10px;padding:14px 2px 0;font-size:14px}
+.card .meta span:first-child{font-weight:500;line-height:1.3}
+.card .meta span:last-child{color:var(--mute);font-variant-numeric:tabular-nums;font-size:12px;padding-top:2px}
+.more{display:flex;justify-content:center;margin-top:56px}
+.empty{grid-column:1/-1;text-align:center;color:var(--mute);padding:80px 0}
+
+/* simulator band */
+.sim{background:var(--lime);color:var(--ink);overflow:hidden;position:relative}
+.sim .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.sim h2{font-size:clamp(54px,9vw,140px)}
+.sim p{font-size:18px;line-height:1.55;max-width:440px;margin:22px 0 32px}
+.sim .btn{background:var(--ink);color:var(--lime)}
+.sim .btn::before{content:"";position:absolute;inset:0;background:var(--paper);transform:translateY(101%);transition:transform .45s var(--ease);z-index:-1}
+.sim .btn:hover{color:var(--ink)} .sim .btn:hover::before{transform:none}
+.steps{list-style:none;counter-reset:s;display:grid;gap:0}
+.steps li{counter-increment:s;display:flex;gap:22px;align-items:baseline;padding:22px 0;border-top:1.5px solid rgba(11,11,10,.85);font-size:19px;font-weight:500}
+.steps li:last-child{border-bottom:1.5px solid rgba(11,11,10,.85)}
+.steps li::before{content:"0" counter(s);font-family:var(--display);font-weight:900;font-size:40px;line-height:1}
+
+/* contact */
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.ct{border:1px solid var(--line);padding:40px;border-radius:4px;display:flex;flex-direction:column;justify-content:space-between;min-height:260px;position:relative;overflow:hidden;transition:border-color .4s}
+.ct::before{content:"";position:absolute;inset:auto -20% -120% -20%;height:200%;background:radial-gradient(closest-side,rgba(201,243,29,.45),transparent);transition:transform .7s var(--ease);transform:translateY(30%)}
+.ct:hover{border-color:var(--text)} .ct:hover::before{transform:translateY(-20%)}
+.ct svg{width:40px;height:40px;color:var(--text)}
+.ct h3{font-family:var(--display);font-weight:900;font-size:52px;text-transform:uppercase;line-height:.9;margin-top:40px}
+.ct p{color:var(--mute);margin-top:10px;display:flex;justify-content:space-between;align-items:center}
+.ct p .arrow{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:all .4s var(--ease)}
+.ct:hover p .arrow{background:var(--lime);color:var(--ink);border-color:var(--lime);transform:rotate(-45deg)}
+
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--mute);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer img{height:30px}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:80;background:rgba(6,6,5,.92);backdrop-filter:blur(8px);color:var(--paper);display:grid;place-items:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .4s}
+.lb.open{opacity:1;pointer-events:auto}
+.lb-box{display:grid;grid-template-columns:minmax(0,560px) 300px;gap:36px;align-items:center;transform:scale(.94) translateY(20px);transition:transform .5s var(--ease)}
+.lb.open .lb-box{transform:none}
+.lb-box img{width:100%;aspect-ratio:10/9;object-fit:cover;object-position:top;border-radius:4px;background:var(--ink-2)}
+.lb-info .eyebrow{margin-bottom:14px;color:var(--lime)}
+.lb .btn-ghost{border-color:#3b3b35}.lb .btn-ghost:hover{border-color:var(--lime);color:var(--lime)}
+.lb-box img{background:#151513}
+.lb-info h3{font-family:var(--display);font-weight:900;font-size:46px;text-transform:uppercase;line-height:.92}
+.lb-info .code{color:var(--mute);margin:12px 0 28px;font-size:14px}
+.lb-info .btn{width:100%;justify-content:space-between;margin-bottom:10px}
+.lb-close{position:absolute;top:20px;right:24px;font-size:14px;letter-spacing:.15em;text-transform:uppercase;color:#cfcec6}
+.lb-close:hover{color:var(--lime)}
+.lb-nav{position:absolute;top:50%;translate:0 -50%;width:52px;height:52px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:20px;transition:all .3s}
+.lb-nav:hover{border-color:var(--lime);color:var(--lime)}
+.lb-prev{left:24px} .lb-next{right:24px}
+
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+.wa-float{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.4);transition:transform .3s var(--ease)}
+.wa-float:hover{transform:scale(1.08) rotate(-6deg)}
+.wa-float svg{width:30px;height:30px}
+
+@media (max-width:900px){
+  .nav ul{display:none}
+  .hero-grid,.sim .wrap,.contact .wrap{grid-template-columns:1fr}
+  .hero-stack{height:360px;margin:20px 0 40px}
+  section{padding:84px 0}
+  .lb-box{grid-template-columns:1fr;gap:20px;max-height:90vh;overflow:auto}
+  .lb-info h3{font-size:34px}
+  .lb-nav{display:none}
+  .search{max-width:none;margin-left:0}
+  .grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .ct{padding:28px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}
+  h1 .line span,.hero-stack figure,.fade-in,.card,.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top"><img src="assets/logo.png" alt="Vertex Sports"></a>
+    <ul>
+      <li><a href="#catalogo">Catálogo</a></li>
+      <li><a href="#simulador">Simulador</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a class="btn btn-lime" href="https://www.simuladorvertexsports.com.br/simulador/" target="_blank" rel="noopener">Simulador
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow fade-in" style="animation-delay:.1s">Uniformes personalizados</div>
+      <h1>
+        <span class="line"><span>Vista a</span></span>
+        <span class="line"><span><em>camisa</em> do</span></span>
+        <span class="line"><span>seu time</span></span>
+      </h1>
+      <p class="lead fade-in">Centenas de modelos para futebol, interclasse e formatura. Escolha o seu, personalize no simulador e fale com a gente.</p>
+      <div class="hero-ctas fade-in" style="animation-delay:.7s">
+        <a class="btn btn-lime" href="#catalogo">Ver catálogo
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a class="btn btn-ghost" href="https://www.simuladorvertexsports.com.br/simulador/" target="_blank" rel="noopener">Abrir simulador</a>
+      </div>
+    </div>
+    <div class="hero-stack" id="heroStack"></div>
+  </div>
+  <div class="marquee" aria-hidden="true"><div class="marquee-track" id="mq"></div></div>
+</header>
+
+<section id="catalogo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2><small>Catálogo de modelos</small>Escolha<br>o seu modelo</h2>
+    </div>
+    <div class="toolbar reveal">
+      <div class="filters" id="filters"></div>
+      <label class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Buscar time, seleção, tema…">
+      </label>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="more"><button class="btn btn-ghost" id="more">Carregar mais</button></div>
+  </div>
+</section>
+
+<section class="sim" id="simulador">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>Monte<br>o seu.</h2>
+      <p>Gostou de um modelo? Leve para o simulador Vertex, troque cores, nomes e números, e veja o uniforme pronto antes de fechar o pedido.</p>
+      <a class="btn" href="https://www.simuladorvertexsports.com.br/simulador/" target="_blank" rel="noopener">Abrir o simulador
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+    </div>
+    <ol class="steps reveal">
+      <li>Escolha um modelo no catálogo</li>
+      <li>Personalize no simulador</li>
+      <li>Envie pelo WhatsApp e receba o orçamento</li>
+    </ol>
+  </div>
+</section>
+
+<section class="contact" id="contato">
+  <div class="wrap">
+    <a class="ct reveal" id="ctWa" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg>
+      <div><h3>WhatsApp</h3><p><span>Peça seu orçamento</span><span class="arrow">→</span></p></div>
+    </a>
+    <a class="ct reveal" id="ctIg" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+      <div><h3>Instagram</h3><p><span id="igHandle">@vertexsports</span><span class="arrow">→</span></p></div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/logo.png" alt="Vertex Sports">
+    <span>© <span id="yr"></span> Vertex Sports · O uniforme dos campeões</span>
+  </div>
+</footer>
+
+<a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg>
+</a>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true">
+  <button class="lb-close" id="lbClose">Fechar ✕</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Anterior">←</button>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Próximo">→</button>
+  <div class="lb-box">
+    <img id="lbImg" alt="">
+    <div class="lb-info">
+      <div class="eyebrow" id="lbCat"></div>
+      <h3 id="lbName"></h3>
+      <div class="code" id="lbCode"></div>
+      <a class="btn btn-lime" id="lbWa" href="#" target="_blank" rel="noopener">Quero este modelo <span>→</span></a>
+      <a class="btn btn-ghost" href="https://www.simuladorvertexsports.com.br/simulador/" target="_blank" rel="noopener" style="width:100%;justify-content:space-between">Abrir simulador <span>↗</span></a>
+    </div>
+  </div>
+</div>
+
+<script src="assets/catalogo.js"></script>
+<script>
+/* ===== CONTATOS: preencha aqui ===== */
+const WHATSAPP = "5500000000000";        // DDI + DDD + número, só dígitos
+const INSTAGRAM = "vertexsports";        // usuário sem @
+/* =================================== */
+
+const waLink = msg => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
+const big = src => src.replace(/-300x300\./, "-600x600.");
+document.getElementById("yr").textContent = new Date().getFullYear();
+for (const id of ["ctWa", "waFloat"]) document.getElementById(id).href = waLink("Olá, Vertex! Quero fazer um orçamento de uniforme.");
+document.getElementById("ctIg").href = `https://instagram.com/${INSTAGRAM}`;
+document.getElementById("igHandle").textContent = "@" + INSTAGRAM;
+
+const ALL = window.CATALOGO || [];
+const CATS = ["Todos", "Clubes Europeus", "Seleções", "Clubes do Mundo", "Conceito", "Interclasse & Formatura"];
+const PAGE = 24;
+let cat = "Todos", q = "", shown = PAGE, list = ALL;
+
+// hero
+const pick = ALL.filter(p => p.c === "Interclasse & Formatura").slice(0, 3);
+document.getElementById("heroStack").innerHTML = pick.map(p => `<figure><img src="${big(p.i)}" alt="${p.n}"></figure>`).join("");
+const words = ["Futebol", "Interclasse", "Formatura", "Seleções", "Clubes", "Conceito", "Personalizado"];
+document.getElementById("mq").innerHTML = [...words, ...words, ...words, ...words].map(w => `<span>${w}</span>`).join("");
+
+// filters
+const fEl = document.getElementById("filters");
+fEl.innerHTML = CATS.map(c => {
+  const n = c === "Todos" ? ALL.length : ALL.filter(p => p.c === c).length;
+  return `<button class="chip${c === cat ? " on" : ""}" data-c="${c}">${c}<b>${n}</b></button>`;
+}).join("");
+fEl.addEventListener("click", e => {
+  const b = e.target.closest(".chip"); if (!b) return;
+  cat = b.dataset.c; fEl.querySelectorAll(".chip").forEach(x => x.classList.toggle("on", x === b));
+  shown = PAGE; render();
+});
+let t; document.getElementById("q").addEventListener("input", e => { clearTimeout(t); t = setTimeout(() => { q = e.target.value; shown = PAGE; render(); }, 180); });
+
+const norm = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px" });
+const grid = document.getElementById("grid"), more = document.getElementById("more");
+
+function render() {
+  const nq = norm(q.trim());
+  list = ALL.filter(p => (cat === "Todos" || p.c === cat) && (!nq || norm(p.n + " " + p.k).includes(nq)));
+  grid.innerHTML = list.length ? list.slice(0, shown).map((p, i) => `
+    <article class="card" data-i="${i}" style="transition-delay:${(i % 4) * 60}ms">
+      <div class="ph"><img loading="lazy" src="${big(p.i)}" alt="${p.n}"><span class="tag">${p.c}</span></div>
+      <div class="meta"><span>${p.n}</span><span>${p.k ? "#" + p.k : ""}</span></div>
+    </article>`).join("") : `<p class="empty">Nenhum modelo encontrado.</p>`;
+  grid.querySelectorAll(".card").forEach(c => io.observe(c));
+  more.style.display = shown < list.length ? "" : "none";
+}
+more.onclick = () => { shown += PAGE; render(); };
+render();
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+// nav
+const nav = document.getElementById("nav");
+addEventListener("scroll", () => nav.classList.toggle("solid", scrollY > 40), { passive: true });
+
+// lightbox
+const lb = document.getElementById("lb"); let cur = 0;
+function openLb(i) {
+  cur = (i + list.length) % list.length; const p = list[cur];
+  document.getElementById("lbImg").src = big(p.i);
+  document.getElementById("lbImg").alt = p.n;
+  document.getElementById("lbCat").textContent = p.c;
+  document.getElementById("lbName").textContent = p.n;
+  document.getElementById("lbCode").textContent = p.k ? "Modelo #" + p.k : "";
+  document.getElementById("lbWa").href = waLink(`Olá, Vertex! Tenho interesse no modelo "${p.n}"${p.k ? " (#" + p.k + ")" : ""}.`);
+  lb.classList.add("open"); document.body.style.overflow = "hidden";
+}
+const closeLb = () => { lb.classList.remove("open"); document.body.style.overflow = ""; };
+grid.addEventListener("click", e => { const c = e.target.closest(".card"); if (c) openLb(+c.dataset.i); });
+document.getElementById("lbClose").onclick = closeLb;
+document.getElementById("lbPrev").onclick = () => openLb(cur - 1);
+document.getElementById("lbNext").onclick = () => openLb(cur + 1);
+lb.addEventListener("click", e => { if (e.target === lb) closeLb(); });
+addEventListener("keydown", e => {
+  if (!lb.classList.contains("open")) return;
+  if (e.key === "Escape") closeLb(); if (e.key === "ArrowLeft") openLb(cur - 1); if (e.key === "ArrowRight") openLb(cur + 1);
+});
+</script>
+</body>
+</html>
