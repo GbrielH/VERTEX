@@ -142,6 +142,11 @@ h2 small{display:block;font-family:var(--body);font-weight:500;font-size:13px;le
 footer{border-top:1px solid var(--line);padding:40px 0;color:var(--mute);font-size:13px}
 footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
 footer img{height:30px}
+.dev-credit{display:flex;justify-content:center;margin-top:32px;padding-top:14px;border-top:1px solid var(--line)}
+.dev-credit a{display:inline-flex;align-items:center;gap:9px;font-size:10px;font-weight:700;color:var(--mute);transition:color .18s}
+.dev-credit img{width:42px;height:38px;object-fit:contain;opacity:.88}
+.dev-credit strong{color:var(--ink);transition:color .18s}
+.dev-credit a:hover,.dev-credit a:focus-visible{color:var(--ink)} .dev-credit a:hover strong,.dev-credit a:focus-visible strong{color:var(--lime-d)}
 
 /* lightbox */
 .lb{position:fixed;inset:0;z-index:80;background:rgba(6,6,5,.92);backdrop-filter:blur(8px);color:var(--paper);display:grid;place-items:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .4s}
@@ -271,6 +276,12 @@ footer img{height:30px}
   <div class="wrap">
     <img src="assets/logo.png" alt="Vertex Sports">
     <span>© <span id="yr"></span> Vertex Sports · O uniforme dos campeões</span>
+  </div>
+  <div class="dev-credit">
+    <a href="https://gbrielh.github.io/Quimera-tech/" target="_blank" rel="noopener noreferrer" aria-label="Site desenvolvido por Quimera Tech (abre em nova aba)">
+      <img src="assets/quimera-tech.svg" alt="" aria-hidden="true">
+      <span>Site desenvolvido por <strong>Quimera Tech</strong></span>
+    </a>
   </div>
 </footer>
 
