@@ -1,0 +1,26 @@
+name: Atualizar catálogo
+
+on:
+  schedule:
+    - cron: "0 9 * * *"   # todo dia às 06:00 (horário de Brasília)
+  workflow_dispatch:       # permite rodar manualmente pela aba Actions
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/atualizar_catalogo.py
+      - name: Publicar se mudou
+        run: |
+          git diff --quiet assets/catalogo.js && { echo "Sem novidades"; exit 0; }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898900+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Atualiza catálogo automaticamente"
+          git push

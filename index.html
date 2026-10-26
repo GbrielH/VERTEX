@@ -302,21 +302,20 @@ const INSTAGRAM = "vertexsports";        // usuário sem @
 /* =================================== */
 
 const waLink = msg => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
-const big = src => src.replace(/-300x300\./, "-600x600.");
 document.getElementById("yr").textContent = new Date().getFullYear();
 for (const id of ["ctWa", "waFloat"]) document.getElementById(id).href = waLink("Olá, Vertex! Quero fazer um orçamento de uniforme.");
 document.getElementById("ctIg").href = `https://instagram.com/${INSTAGRAM}`;
 document.getElementById("igHandle").textContent = "@" + INSTAGRAM;
 
 const ALL = window.CATALOGO || [];
-const CATS = ["Todos", "Clubes Europeus", "Seleções", "Clubes do Mundo", "Conceito", "Interclasse & Formatura"];
+const CATS = ["Todos", "Interclasse", "Terceirão", "Nono Ano", "Formatura & Escola", "Times & Seleções"];
 const PAGE = 24;
 let cat = "Todos", q = "", shown = PAGE, list = ALL;
 
 // hero
-const pick = ALL.filter(p => p.c === "Interclasse & Formatura").slice(0, 3);
-document.getElementById("heroStack").innerHTML = pick.map(p => `<figure><img src="${big(p.i)}" alt="${p.n}"></figure>`).join("");
-const words = ["Futebol", "Interclasse", "Formatura", "Seleções", "Clubes", "Conceito", "Personalizado"];
+const pick = ALL.filter(p => p.c === "Interclasse").slice(0, 3);
+document.getElementById("heroStack").innerHTML = pick.map(p => `<figure><img src="${p.i}" alt="${p.n}"></figure>`).join("");
+const words = ["Interclasse", "Terceirão", "Nono Ano", "Formatura", "Futebol", "Personalizado"];
 document.getElementById("mq").innerHTML = [...words, ...words, ...words, ...words].map(w => `<span>${w}</span>`).join("");
 
 // filters
@@ -341,7 +340,7 @@ function render() {
   list = ALL.filter(p => (cat === "Todos" || p.c === cat) && (!nq || norm(p.n + " " + p.k).includes(nq)));
   grid.innerHTML = list.length ? list.slice(0, shown).map((p, i) => `
     <article class="card" data-i="${i}" style="transition-delay:${(i % 4) * 60}ms">
-      <div class="ph"><img loading="lazy" src="${big(p.i)}" alt="${p.n}"><span class="tag">${p.c}</span></div>
+      <div class="ph"><img loading="lazy" src="${p.i}" alt="${p.n}"><span class="tag">${p.c}</span></div>
       <div class="meta"><span>${p.n}</span><span>${p.k ? "#" + p.k : ""}</span></div>
     </article>`).join("") : `<p class="empty">Nenhum modelo encontrado.</p>`;
   grid.querySelectorAll(".card").forEach(c => io.observe(c));
@@ -359,7 +358,7 @@ addEventListener("scroll", () => nav.classList.toggle("solid", scrollY > 40), { 
 const lb = document.getElementById("lb"); let cur = 0;
 function openLb(i) {
   cur = (i + list.length) % list.length; const p = list[cur];
-  document.getElementById("lbImg").src = big(p.i);
+  document.getElementById("lbImg").src = p.i;
   document.getElementById("lbImg").alt = p.n;
   document.getElementById("lbCat").textContent = p.c;
   document.getElementById("lbName").textContent = p.n;
